@@ -5,138 +5,122 @@
 
 var loggedIn = false; //default
 var currentUser = null; //default
-
 var allUsers = [];
-var allImages = [];
-
 var sessionInfo = [];
 
+// ----------------- SIGN IN -------------------------------------------------
 function checkStorage(){
-    if(localStorage.allUsers){
-        var retrieveStorage = localStorage.getItem('allUsers');
-        allUsers = JSON.parse(retrieveStorage);
-        console.log('allUsers array ' + allUsers);
-    }
+  if(localStorage.allUsers){
+    var retrieveStorage = localStorage.getItem('allUsers');
+    allUsers = JSON.parse(retrieveStorage);
+    // console.log('allUsers array ' + allUsers);
+  }
 
-    if(localStorage.sessionInfo){
-        var retrieveSession = localStorage.getItem('sessionInfo');
-        sessionInfo = JSON.parse(retrieveSession);
-        console.log('session info = ' + sessionInfo);
-    }
-
+  if(localStorage.sessionInfo){
+    var retrieveSession = localStorage.getItem('sessionInfo');
+    sessionInfo = JSON.parse(retrieveSession);
+    // console.log('session info = ' + sessionInfo);
+  }
 }
 
-
-console.log(location.href);
+// console.log(location.href);
 
 // CONSTRUCTORS (self-explanatory)
 function User(username, password) {
-    this.username = username;
-    this.password = password;
-    this.savedPages = [];
-    allUsers.push(this);
+  this.username = username;
+  this.password = password;
+  this.savedPages = [];
+  allUsers.push(this);
 }
 
-function Image(name){
-    this.name = name;
-    this.src = './imgdir/' + this.name + '.jpg';
-    allImages.push(this);
-}
-
-        //image instances
-        new Image('beanstalk');
-        new Image('gorilla');
-        new Image('humpty');
-        new Image('moon');
-        new Image('oz');
-        new Image('tiger');
-
+//safe feature TBD
 function SavePage(title, picture, story, order){
-    this.title = title;
-    this.picture = picture;
-    this.story = story;
-    this.order = order;
-    currentUser.savedPages.push(this);
+  this.title = title;
+  this.picture = picture;
+  this.story = story;
+  this.order = order;
+  currentUser.savedPages.push(this);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 // INDEX . HTML
 
-if(location.href === 'file:///C:/Users/maria/Desktop/blargh/index.html'){
-    var signInButton = document.getElementById('signIn');
-    signInButton.addEventListener('click', handleSignIn);
-
-    checkStorage();
+if(location.href === 'index.html'){  // for the DOM elements in story.js, they need to be in an if statement to point to the correct file
+  var signInButton = document.getElementById('signIn');
+  signInButton.addEventListener('click', handleSignIn);
+  checkStorage();
 }
 
 function handleSignIn(event){
-    event.preventDefault();
-    console.log('THE BUTTON WORKS!!!!');
+  event.preventDefault();
+  // console.log('THE BUTTON WORKS!!!!');
 
-    var inputUsername = document.getElementById('inputUsername').value;
-    var inputPassword = document.getElementById('inputPassword').value;
-    console.log(inputUsername);
-    console.log(inputPassword);
+  var inputUsername = document.getElementById('inputUsername').value;
+  var inputPassword = document.getElementById('inputPassword').value;
+  // console.log(inputUsername);
+  // console.log(inputPassword);
 
-    if(allUsers.length === 0){
-        alert('Invalid login!');
-        document.getElementById('inputUsername').value = null;
-        document.getElementById('inputPassword').value = null;
-        return;
+  // in the event allUsers array is empty, then alert user to go sign up
+  if(allUsers.length === 0){
+    alert('Account not found. Please sign up.');
+    document.getElementById('inputUsername').value = null;
+    document.getElementById('inputPassword').value = null;
+    return;
+  }
+
+
+  // in the event that allUsers array validate if user is existing user by matching username and password from existing local/session storage
+  for(var i = 0; i < allUsers.length; i++){
+    if(inputUsername === allUsers[i].username && inputPassword === allUsers[i].password){
+      // alert('Login succesful!');
+      // console.log(sessionInfo);
+
+///  NEED AGREEN ON SESSION VS. LOCAL STORAGE.  FIX THIS!!!!  storing session info in session storage
+      // var thisTime = sessionStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
+
+      //turning session info into value and given it a key this Sesion before storing it in Local Storage
+      // var storeThisSession = localStorage.setItem('thisSession', JSON.stringify(thisTime));
+
+      //populating teh sessionInfo array
+      sessionInfo.push(loggedIn = true);
+      sessionInfo.push(allUsers[i]);
+
+      // store sessionInfo into local storage
+      var storeThisSession = localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
+
+      // reset form fields
+      document.getElementById('inputUsername').value = null;
+      document.getElementById('inputPassword').value = null;
+
+      // creating BEGIN as a link and only allows it to appear after user signs in
+      var beginButtonHere = document.getElementById('beginButtonHere');
+      var begin = document.createElement('a');
+      begin.href = 'story.html';
+      begin.textContent = 'Begin';
+      beginButtonHere.appendChild(begin);
+
+      // user Sign In form
+      var signInForm = document.getElementById('signInForm');
+      signInForm.textContent = null;
+
+      // user Sign Out button
+      var signOutButtonHere = document.getElementById('signOutButtonHere');
+      var signOut = document.createElement('button');
+      signOut.id = 'signOutButton';
+      signOut.type = 'submit';
+      signOut.textContent = 'Sign Out';
+      signOutButtonHere.appendChild(signOut);
+      signOutButtonHere.addEventListener('click', handleSignOut);
+      return;
     }
+    alert('Username or Password is incorrect. Please try again.');
 
-    for(var i = 0; i < allUsers.length; i++){
-        if(inputUsername === allUsers[i].username && inputPassword === allUsers[i].password){
-
-
-            console.log(sessionInfo);
-            alert('Login succesful!');
-
-            var thisTime = sessionStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
-            var foobar = localStorage.setItem('thisTime', JSON.stringify(thisTime));
-
-
-            document.getElementById('inputUsername').value = null;
-            document.getElementById('inputPassword').value = null;
-
-            var beginButtonHere = document.getElementById('beginButtonHere');
-            var begin = document.createElement('a');
-            begin.href = 'story.html';
-            begin.textContent = 'Begin';
-            beginButtonHere.appendChild(begin);
-
-            var signInForm = document.getElementById('signInForm');
-            signInForm.textContent = null;
-
-            var signOutButtonHere = document.getElementById('signOutButtonHere');
-            var signOut = document.createElement('button');
-            signOut.id = 'signOutButton';
-            signOut.type = 'submit';
-            signOut.textContent = 'Sign Out';
-            signOutButtonHere.appendChild(signOut);
-            signOutButtonHere.addEventListener('click', handleSignOut);
-
-            return;
-        }
-        alert('Invalid login!');
-        console.log('YOU FUCKED IT UP');
-        document.getElementById('inputUsername').value = null;
-        document.getElementById('inputPassword').value = null;
-        return;
-    }
+    // reset form fields
+    document.getElementById('inputUsername').value = null;
+    document.getElementById('inputPassword').value = null;
+    return;
+  }
 }
 
 function handleSignOut(event){
@@ -148,92 +132,64 @@ function handleSignOut(event){
 
 
 
+// -------------------------------SIGN UP ------------------------------------
 
+if(location.href === 'signup.html'){
+  var signUp = document.getElementById('signUp');
+  signUp.addEventListener('click', handleSignUp);
 
+  checkStorage();  // check to see if you already logged in
 
-
-
-
-
-
-
-
-// SIGN UP . HTML
-
-if(location.href === 'file:///C:/Users/maria/Desktop/blargh/signup.html'){
-    var signUp = document.getElementById('signUp');
-    signUp.addEventListener('click', handleSignUp);
-
-    checkStorage();
-
-    if(sessionInfo[0] === true){
-        alert('You are already signed in. Please go to Home and sign out.');
-        var accountForm = document.getElementById('makeAccount');
-        accountForm.textContent =  null;
-    }
+  if(sessionInfo[0] === true){
+    alert('You are currently signed in.');
+    var accountForm = document.getElementById('makeAccount');
+    accountForm.textContent = null;
+  }
 }
 
 function handleSignUp(event) {
-    event.preventDefault();
-    console.log('the button works.');
+  event.preventDefault();
+  // console.log('the button works.');
 
-    var makeUsername = document.getElementById('makeUsername').value;
-    var makePassword = document.getElementById('makePassword').value;
+  var makeUsername = document.getElementById('makeUsername').value;
+  var makePassword = document.getElementById('makePassword').value;
 
-    if(allUsers.length === 0){
+  if(allUsers.length === 0){
 
-        makeUser(makeUsername, makePassword, allUsers);
-        return;
+    makeUser(makeUsername, makePassword, allUsers);
+    return;
+  }
+
+  for(var i = 0; i < allUsers.length; i++){
+
+    if(makeUsername === allUsers.username[i]){
+      alert('Username is taken!');
+      loggedIn = false;
+      return;
     }
-
-    for(var i = 0; i < allUsers.length; i++){
-
-        if(makeUsername === allUsers.username[i]){
-            alert('Username is taken!');
-            loggedIn = false;
-            return;
-        }
-        if(makePassword.length > 8){
-            alert('Password is too long!');
-            loggedIn = false;
-            return;
-        }
-        makeUser(makeUsername, makePassword, allUsers[i]);
+    if(makePassword.length > 8){
+      alert('Password is too long!');
+      loggedIn = false;
+      return;
     }
+    makeUser(makeUsername, makePassword, allUsers[i]);
+  }
 }
 
 
 function makeUser(newUsername, newPassword, newUser){
-    new User(newUsername, newPassword);
-    console.log('newUsername = ' + newUsername);
-    console.log('newPassword = ' + newPassword);
+  new User(newUsername, newPassword);
+    // console.log('newUsername = ' + newUsername);
+    // console.log('newPassword = ' + newPassword);
 
-    sessionInfo.push(loggedIn = true);
-    sessionInfo.push(currentUser = newUser);
-
-
-    var storeThisUser = localStorage.setItem('allUsers', JSON.stringify(allUsers));
-    var storeThisSession = localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
+  sessionInfo.push(loggedIn = true);
+  sessionInfo.push(currentUser = newUser);
 
 
-    alert('Sign up Successful!');
-    console.log(sessionInfo);
-
-    // location.href = 'story.html';
-}
+  var storeThisUser = localStorage.setItem('allUsers', JSON.stringify(allUsers));
+  var storeThisSession = localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
 
 
-
-
-
-
-
-
-
-// STORY . HTML
-
-if(location.href === 'file:///C:/Users/maria/Desktop/blargh/story.html'){
-    console.log('something');
-
-    checkStorage();
+  alert('Sign up Successful!');
+  location.href = 'story.html';  // take user to story book
 }

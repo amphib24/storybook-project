@@ -1,10 +1,14 @@
 'use strict'
 
 //DOM variables
-var storyImage = document.getElementById('storyImage');
-var changeImageButton = document.getElementById('changeImageButton');
-var textBox = document.getElementById('textBox');
-var clearText = document.getElementById('clearText');
+if(location.href = 'story.html') {
+  var storyImage = document.getElementById('storyImage');
+  var changeImageButton = document.getElementById('changeImageButton');
+  var textBox = document.getElementById('textBox');
+  var clearText = document.getElementById('clearText');
+  checkStorage();
+}
+
 //Global variables
 var allImages = [];
 var imgName = ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz', 'tiger'];
