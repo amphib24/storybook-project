@@ -1,13 +1,10 @@
 'use strict'
 
 //DOM variables
-if(location.href = 'story.html') {
-  var storyImage = document.getElementById('storyImage');
-  var changeImageButton = document.getElementById('changeImageButton');
-  var textBox = document.getElementById('textBox');
-  var clearText = document.getElementById('clearText');
-  checkStorage();
-}
+var storyImage = document.getElementById('storyImage');
+var changeImageButton = document.getElementById('changeImageButton');
+var textBox = document.getElementById('textBox');
+var clearText = document.getElementById('clearText');
 
 //Global variables
 var allImages = [];
