@@ -3,56 +3,57 @@
 //DOM variables
 var storyImage = document.getElementById('storyImage');
 
-
-
-
-
-
-
-
-
 //Global variables
 var allImages = [];
 var imgName = ['beanstalk', 'book', 'gorilla', 'humpty', 'moon', 'oz', 'tiger'];
 
-
-
-
-
 //to get images from the array, to use later for local storage
 for (var i = 0; i < imgName.length; i++){
-  new ImgGenerator(imgName[i]);
+  new ImgGenerator (imgName[i]);
 }
 
 //Constructor
 function ImgGenerator(name){
   this.names = name;
   this.filePath = 'img/' + name + '.jpg';
-  this.used = false;
+  this.used = false; // meaning image hasn't been used before
   allImages.push(this);
 }
 
 
  //////// create random image generator
- function randImg () {
-   var img = return Math.floor(Math.random() * allImages.length);
-   storyImage.appendChild(img[i]);
+ function randImg() {
+   var randomNumber = Math.floor(Math.random() * allImages.length);
+   var theImage = allImages[randomNumber];
+   return theImage;
  }
 
-function displayImg (){
+function displayImg() {
 
-  var x = randImg();
+  var imageObject = randImg();
 
-while (allImages[x].used !== true) {
-  
+  while (imageObject.used !== true) {  // meaning images hasn't been used before
+    imageObject = randImg();
+  }
+
+  imageObject.used = true;
+
+  storyImage.src = imageObject.filePath;
+
+  // reset check when array runs out .
+
+}
+
+function resetImg() {
+  //if we run out of array index, reset the array
+
 
 }
 
 
 
-    storyImage.src = allImages[newImage[i]].filePath;
 
-     randImg();
-  }
-createImg();
-/////display image
+
+// function execution
+
+displayImg();
