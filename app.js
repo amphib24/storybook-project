@@ -44,6 +44,7 @@ function displayImg (){
   var x = randImg();
 
 while (allImages[x].used !== true) {
+  
 
 }
 
