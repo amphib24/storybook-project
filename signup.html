@@ -9,7 +9,6 @@
   <body>
 
     <nav>
-      <ul>
         <h1> HOME</h1>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -19,23 +18,20 @@
     </nav>
 
     <!-- new user input form -->
+
+    <h6>Please fill out the following fields:</h6>
+
     <form>
-      <h6>Please fill out the following fields:</h6>
-      <lable>Username:<input type="text" placeholder="Username"></label>
-      <lable>Password:<input type="password" placeholder="password"></label>
+      <label for="makeUsername">Username:</label>
+      <input id='makeUsername' type="text" placeholder="Username">
+
+      <label for="makePassword">Password:</label>
+      <input id='makePassword' type="password" placeholder="password">
       <h6>(limit to 8 charaters only)</h6>
-      <button>SIGN UP</button>
+      <button id="signUp" type="submit">SIGN UP</button>
     </form>
 
-
-    <!-- social media icons -->
-    <footer>
-      <img src=""/>
-      <img src=""/>
-      <img src=""/>
-    </footer>
-
-
+<script src="loginsignup.js"></script>
 
   </body>
 </html>
