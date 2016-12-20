@@ -3,7 +3,8 @@
 //DOM variables
 var storyImage = document.getElementById('storyImage');
 var changeImageButton = document.getElementById('changeImageButton');
-
+var textBox = document.getElementById('textBox');
+var clearText = document.getElementById('clearText');
 //Global variables
 var allImages = [];
 var imgName = ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz', 'tiger'];
@@ -23,11 +24,11 @@ function ImgGenerator(name){
 
 
  //////// create random image generator
- function randImg() {
-   var randomNumber = Math.floor(Math.random() * allImages.length);
-   var theImage = allImages[randomNumber];
-   return theImage;
- }
+function randImg() {
+  var randomNumber = Math.floor(Math.random() * allImages.length);
+  var theImage = allImages[randomNumber];
+  return theImage;
+}
 
 var counter = 0;
 
@@ -52,22 +53,26 @@ function displayImg() {
     }
   }
 
-  console.table(allImages);
+  // console.table(allImages);
 }
-
-function resetImg() {
-  //if we run out of array index, reset the array
-
-}
-
-
-
-
 
 // function execution
 
 displayImg();
-
-changeImageButton.addEventListener('click', function () {
+function changeImageHandler(event){
+  event.preventDefault();
   displayImg();
-});
+}
+
+// function clearText(){
+//   document.getElementById('textBox').value = '';
+// }
+//clear button
+function clearTextHandler(event){
+  event.preventDefault();
+  console.log('event listener working');
+  textBox.value = '';
+  console.log(textBox);
+}
+clearText.addEventListener('click', clearTextHandler);
+changeImageButton.addEventListener('click', changeImageHandler);
