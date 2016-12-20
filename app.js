@@ -2,6 +2,7 @@
 
 //DOM variables
 var storyImage = document.getElementById('storyImage');
+var changeImageButton = document.getElementById('changeImageButton');
 
 //Global variables
 var allImages = [];
@@ -28,11 +29,13 @@ function ImgGenerator(name){
    return theImage;
  }
 
+var counter = 0;
+
 function displayImg() {
 
   var imageObject = randImg();
 
-  while (imageObject.used !== false) {  // meaning images hasn't been used before
+  while (imageObject.used === true) {  // meaning images hasn't been used before
     imageObject = randImg();
   }
 
@@ -41,12 +44,19 @@ function displayImg() {
   storyImage.src = imageObject.filePath;
 
   // reset check when array runs out .
+  counter += 1;
 
+  if (counter % 6 === 0) {
+    for (var i = 0; i < allImages.length; i++) {
+      allImages[i].used = false;
+    }
+  }
+
+  console.table(allImages);
 }
 
 function resetImg() {
   //if we run out of array index, reset the array
-
 
 }
 
@@ -57,3 +67,7 @@ function resetImg() {
 // function execution
 
 displayImg();
+
+changeImageButton.addEventListener('click', function () {
+  displayImg();
+});
