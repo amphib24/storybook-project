@@ -81,7 +81,7 @@ function clearTextHandler(event){
   textBox.value = '';
   console.log(textBox);
 }
-if(clearText && changeImageButton) {
+// if(clearText && changeImageButton) {
   clearText.addEventListener('click', clearTextHandler);
   changeImageButton.addEventListener('click', changeImageHandler);
-}
+// }
