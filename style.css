@@ -8,7 +8,8 @@
 #storyImage {
   width: 250px;
   height: 250px;
-
+  padding-left: 325px;
+  padding-top: 190px;
 }
 header {
   position: relative;
@@ -35,5 +36,27 @@ nav li a {
  color: #d60c13;
  border: #ecef45 solid 0px;
  background-color: #f3f4b0;
+}
+form{
+  display: inline-block;
+}
+#changeImageButton{
+  width: 75px;
+  height: 30px;
 
+}
+input{
+  position: absolute;
+  width:300px;
+  margin-top: 110px;
+  margin-left: 20px;
+}
+textarea{
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  margin-top: 195px;
+  margin-left: 45px;
+  opacity: .3;
+  font-style: bold;
 }
