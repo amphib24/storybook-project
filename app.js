@@ -10,7 +10,7 @@ var clearText = document.getElementById('clearText');
 
 //Global variables
 var allImages = [];
-var imgName = ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz', 'tiger'];
+var imgName = ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz', 'tiger', 'batman', 'boyanddog', 'boydogplay', 'cars', 'cow', 'dragoncarrot', 'dreams', 'jellyfish', 'junglebook', 'lightingmcqueen', 'mice', 'monster', 'moon','ori-and-the-blind-forest', 'oz', 'pirate', 'roof', 'safari', 'sheeps', 'transformer'];
 
 
 
@@ -54,7 +54,7 @@ function displayImg() {
   // reset check when array runs out .
   counter += 1;
 
-  if (counter % 6 === 0) {
+  if (counter % 26 === 0) {
 
     allImages.forEach(function (element) {
       element.used = false;
