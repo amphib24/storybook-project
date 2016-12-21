@@ -1,0 +1,171 @@
+
+/*BEGIN of styling for Website name, navigation menu and link behavior*/
+*{
+font-family: 'Italiana', serif;
+color: black;
+max-width: 1024px;
+min-width: auto;
+}
+
+h4 {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 30px;
+  font-weight: bolder;
+  max-width: 400px;
+}
+
+h1 {
+position: relative;
+font-family: 'Reenie Beanie', cursive;
+font-size: 80px;
+margin: 0 auto;
+width: 450px;
+left: 120px;
+top:20px;
+margin-bottom:20px;
+}
+
+.subTitle{
+  position: absolute;
+  height: 35px;
+  left:850px;
+  top:50px;
+}
+
+#socialMedia {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  float: left;
+}
+header{
+  width:100%;
+}
+nav{
+  width: 100%;
+}
+#nav {
+position: relative;
+display: inline;
+text-align: center;
+}
+#nav li{
+  display: inline;
+  padding-left: 235px;
+}
+
+#nav li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 50px 0 15px 0;
+}
+
+
+a:link {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+    font-weight: bolder;
+}
+
+a:active {
+  font-weight: bolder;
+}
+/*END of styling for website name, navigation menu and link behavior*/
+
+
+/*BEGIN of styling for background image behavior*/
+
+main{
+  position: relative;
+  left:17.5%;
+  top: 25px;
+}
+
+#rig {
+  position: absolute;
+    width:900px;
+    margin:0 auto; /*center aligned*/
+    padding: 0px;
+    font-size:0;
+    list-style: none;
+    background-color:#000;
+
+}
+#rig li {
+    display: inline-block;
+    display:inline;
+    width:25%;
+    vertical-align:middle;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+/* The wrapper for each item */
+.rig-cell {
+    display:block;
+    position: relative;
+    overflow:hidden;
+}
+
+.rig-img {
+    display:inline-block;
+    width: 150px;
+    height: 150px;
+    border:none;
+    transform:scale(2);
+    transition:all 1s;
+}
+
+#rig li:hover .rig-img {
+    transform:scale(1.05);
+}
+/*BEGIN of styling for background image behavior*/
+
+
+/*BEGIN of styling for BEGIN button link*/
+/*#background {
+  width: 150px;
+  height: 150px;
+  /*display: inline;*/
+/*}
+div.background {
+  background-color: white;
+  border: 2px solid black;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+div.transbox {
+  margin: 10px 10px 10px 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}/*/
+
+/*div.link {
+  border: 2px solid black;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}`*/
+/*END of styling for BEGIN button link*/
+
+
+footer {
+  clear: both;
+  height: 100px;
+}
