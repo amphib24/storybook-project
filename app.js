@@ -55,9 +55,11 @@ function displayImg() {
   counter += 1;
 
   if (counter % 6 === 0) {
-    for (var i = 0; i < allImages.length; i++) {
-      allImages[i].used = false;
-    }
+
+    allImages.forEach(function (element) {
+      element.used = false;
+    });
+
   }
 
   // console.table(allImages);
