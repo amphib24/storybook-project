@@ -1,9 +1,10 @@
 
-* {
-  font-family: 'Italiana', serif;
-  color: black;
-  max-width: 1120px;
-/*min-width: 974px;*/
+/*BEGIN of styling for Website name, navigation menu and link behavior*/
+*{
+font-family: 'Italiana', serif;
+color: black;
+max-width: 1024px;
+min-width: auto;
 }
 
 h4 {
@@ -14,35 +15,49 @@ h4 {
 }
 
 h1 {
+position: relative;
 font-family: 'Reenie Beanie', cursive;
 font-size: 80px;
+margin: 0 auto;
+width: 450px;
+left: 120px;
+top:20px;
+margin-bottom:20px;
 }
 
 .subTitle{
-  float: right;
-  postion: fixed;
-margin: -100px 200px 0px 100px;
+  position: absolute;
+  height: 35px;
+  left:850px;
+  top:50px;
 }
 
 #socialMedia {
   width: 25px;
   height: 25px;
   position: relative;
-  float:right;
+  float: left;
 }
-
-
-ul {
-display: inline-block;
-text-align: center;
-margin: 0 auto;
+header{
+  width:100%;
 }
-
-li{
+nav{
+  width: 100%;
+}
+#nav {
 position: relative;
-display: inline-block;
-padding: 20px 60px 20px 60px;
-margin: 0 auto;
+display: inline;
+text-align: center;
+}
+#nav li{
+  display: inline;
+  padding-left: 235px;
+}
+
+#nav li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 50px 0 15px 0;
 }
 
 
@@ -64,7 +79,6 @@ a:active {
   font-weight: bolder;
 }
 /*END of styling for website name, navigation menu and link behavior*/
-
 .background-image{
   z-index: -999;
   position: absolute;
@@ -76,7 +90,7 @@ a:active {
   width: 250px;
   height: 250px;
   padding-left: 325px;
-  padding-top: 199px;
+  padding-top: 255px;
   display: block;
 }
 
