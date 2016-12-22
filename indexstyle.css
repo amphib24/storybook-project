@@ -193,16 +193,16 @@ position: relative;
 }
 
 #maria {
-
+position: relative;
+top: -250px;
 }
 #maria img {
-
-
+  position: relative;
+right: -425px;
 }
 #maria p{
 position: relative;
 width: 600px;
-right: 425px;
 /*top: -300px;*/
 
 
