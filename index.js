@@ -30,56 +30,51 @@ function User(username, password) {
 }
 
 new User('siamak', '1234');
-console.log(User);
 
-var submitSignIn = document.getElementById('submitSignIn');
-var submitSignUp = document.getElementById('submitSignUp');
 
-checkStorage();
+var submitSignIn = document.getElementById('signInButton');
+
+// checkStorage();
 
 function handleSignIn(event){
-  event.preventDefault();
   checkStorage();
 
-var login = document.getElementById('login');
-var loginUsername = document.getElementById('username').value;
-var loginPassword = document.getElementById('password').value;
+var login = document.getElementById('signInButton');
+var loginUsername = document.getElementById('username');
+var loginPassword = document.getElementById('password');
 
-
+// if user already signed in, go get the sign in info and alert user that they are currently signed in
   if(sessionInfo[0] === true){
-
+    var signInForm = document.getElementById('index');
+    loginUsername.value = '';
+    loginPassword.value = '';
     alert('You are currently signed in.')
-    form.textContent = null;
-
-      // user Sign Out button
-    var signOutButton = document.getElementById('signOutButton');
-    var signOut = document.createElement('button');
-    signOut.id = 'signOutButton';
-    signOut.type = 'submit';
-    signOut.textContent = 'Sign Out';
-    signOutButtonHere.appendChild(signOut);
-    signOutButtonHere.addEventListener('click', handleSignOut);
-    return;
   }
+
 
   // in the event allUsers array is empty, then alert user to go sign up
   if(allUsers.length === 0){
     alert('Account not found. Please sign up.');
-    document.getElementById('username').value = null;
-    document.getElementById('password').value = null;
+    // document.getElementById('username').value = null;
+    // document.getElementById('password').value = null;
     return;
   }
 
   // in the event that allUsers array validate if user is existing user by matching username and password from existing local/session storage
   for(var i = 0; i < allUsers.length; i++){
-    if(loginUsername === allUsers[i].username && loginPassword === allUsers[i].password){
-      alert('Login succesful!');
-      console.log(sessionInfo);
-    }
+    if(loginUsername.value === allUsers[i].username && loginPassword.value === allUsers[i].password){
+      sessionInfo.push(loggedIn = true);
+      sessionInfo.push(allUsers[0]);
+      localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
+      loginUsername.value = '';
+      loginPassword.value = '';
 
-//populating teh sessionInfo array
-sessionInfo.push(loggedIn = true);
-sessionInfo.push(allUsers[i]);
+      //location.href = 'story.html';
+    }
   }
 }
+
+
+console.log(sessionInfo);
+submitSignIn.addEventListener('click', handleSignIn);
 // END INDEX.HTML
