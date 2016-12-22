@@ -22,10 +22,13 @@
 
     <form id='makeAccount'>
       <label for="makeUsername">Username:</label>
+      <!-- TODO: Should use name="" rather than id="" on input tags -->
       <input id='makeUsername' type="text" placeholder="Username">
 
       <label for="makePassword">Password:</label>
+      <!-- TODO: Should use name="" rather than id="" on input tags -->
       <input id='makePassword' type="password" placeholder="password">
+      <!-- TODO: Is there a reason for this limit? Is this being validated? -->
       <h6>(limit to 8 charaters only)</h6>
       <button id='signUp' type="submit">SIGN UP</button>
     </form>
