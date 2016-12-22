@@ -3,17 +3,91 @@
 
 
 //DOM variables
+
 var storyImage = document.getElementById('storyImage');
 var changeImageButton = document.getElementById('changeImageButton');
 var textBox = document.getElementById('textBox');
 var clearText = document.getElementById('clearText');
 
+
+
+
 //Global variables
 var allImages = [];
 var imgName = ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz', 'tiger', 'batman', 'boyanddog', 'boydogplay', 'cars', 'cow', 'dragoncarrot', 'dreams', 'jellyfish', 'junglebook', 'lightingmcqueen', 'mice', 'monster', 'moon','ori-and-the-blind-forest', 'oz', 'pirate', 'roof', 'safari', 'sheeps', 'transformer'];
 
+var loggedIn = false; //default
+var currentUser = null; //
+
+var allUsers = [];
+var sessionInfo = [];
+
+// checks use existence, then checks is a user is logged in
+function checkStorage(){
+  if(localStorage.allUsers){
+    var retrieveStorage = localStorage.getItem('allUsers');
+    allUsers = JSON.parse(retrieveStorage);
+    console.log('allUsers array ' + allUsers);
+  }
+
+  if(localStorage.sessionInfo){
+    var retrieveSession = localStorage.getItem('sessionInfo');
+    sessionInfo = JSON.parse(retrieveSession);
+    console.log('session info = ' + sessionInfo);
+  }
+}
 
 
+// CONSTRUCTORS
+function User(username, password) {
+  this.username = username;
+  this.password = password;
+  this.savedPages = [];
+  allUsers.push(this);
+}
+
+new User('siamak', '1234');
+
+// INDEX.HTML
+
+
+
+var submitSignIn = document.getElementById('submitSignIn');
+var submitSignUp = document.getElementById('submitSignUp');
+
+checkStorage();
+
+function handleSignIn(event){
+    event.preventDefault();
+  checkStorage();
+
+var login = document.getElementById('login');
+var loginUsername = document.getElementById('username').value;
+var loginPassword = document.getElementById('password').value;
+
+
+  if(sessionInfo[0] === true){
+     
+      alert('You are currently signed in.')
+      form.textContent = null;
+
+      // user Sign Out button
+      var signOutButtonHere = document.getElementById('signOutButtonHere');
+      var signOut = document.createElement('button');
+      signOut.id = 'signOutButton';
+      signOut.type = 'submit';
+      signOut.textContent = 'Sign Out';
+      signOutButtonHere.appendChild(signOut);
+      signOutButtonHere.addEventListener('click', handleSignOut);
+      return;
+  }
+
+
+
+
+
+
+// END INDEX.HTML
 
 //to get images from the array, to use later for local storage
 for (var i = 0; i < imgName.length; i++){
@@ -83,7 +157,7 @@ function clearTextHandler(event){
   textBox.value = '';
   console.log(textBox);
 }
-// if(clearText && changeImageButton) {
+ //if(clearText && changeImageButton) {
   clearText.addEventListener('click', clearTextHandler);
   changeImageButton.addEventListener('click', changeImageHandler);
-// }
+ //}
