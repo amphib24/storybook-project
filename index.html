@@ -22,11 +22,12 @@
         <div class ="link">
 
           <!-- Annie: new code for username, password form and begin and sign up buttons -->
-          <form>
-            <input type="text" name="username" placeholder="username">
-            <input type="text" name="password" placeholder="password">
-            <input type="submit" value="SIGN IN">
-            <input type="submit" value="SIGN UP">
+          <form id="index">
+            <input type="text" id="username" placeholder="username">
+            <input type="text" id="password" placeholder="password">
+            <button name="signInButton" type="submit" value="SIGN IN">SIGN IN</button>
+            <button id="signUpButton" type="submit" value="SIGN UP">SIGN UP</button>
+            <button id="signOutButton" type="submit" value="SIGN OUT">SIGN OUT</button>
             </form>
             <!-- Annie: end of new code -->
 
@@ -77,9 +78,9 @@
       </li>
     </ul>
 </main>
-
-
-  <script src="app.js"></script>
+<div id="clearText"></div>
+<div id="changeImageButton"></div>
+  <script src="index.js"></script>
 
 </body>
 
