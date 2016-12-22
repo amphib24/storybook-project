@@ -169,3 +169,52 @@ footer {
   clear: both;
   height: 100px;
 }
+
+
+/*BEGIN of About Us styling page*/
+#aboutus{
+  position:relative;
+  left: 25px;
+}
+
+#siamak {
+position: relative;
+}
+
+#siamak img {
+  position: relative;
+}
+
+#siamak p {
+  position: relative;
+  width: 600px;
+  left: 425px;
+  top: -320px;
+}
+
+#maria {
+
+}
+#maria img {
+
+
+}
+#maria p{
+position: relative;
+width: 600px;
+right: 425px;
+/*top: -300px;*/
+
+
+}
+/*#jeff {
+  position: absolute;
+  float: left;
+
+}*/
+
+/*#annie {
+  position: absolute;
+  float: right;
+
+}*/
