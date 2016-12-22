@@ -80,7 +80,7 @@ a:active {
 }
 /*END of styling for website name, navigation menu and link behavior*/
 
-
+/*Annie's changes start here. evening of 12/21:*/
 /*BEGIN of styling for background image behavior*/
 
 main{
@@ -116,53 +116,52 @@ main{
     overflow:hidden;
 }
 
-.rig-img {
+#rig li:hover .rig-img {
     display:inline-block;
     width: 150px;
-    height: 150px;
+    /*height: 150px;*/
+    opacity: 1;
+    filter: alpha(opacity=30);
     border:none;
-    transform:scale(2);
+    transform:scale(-1, 1);
     transition:all 1s;
 }
 
-#rig li:hover .rig-img {
-    transform:scale(1.05);
+.rig-img {
+  width: 150px;
+  height: 150px;
+  opacity: 0.9;
+  filter: alpha(opacity=30);
+  transform:scale(0.7);
+  transition:all 1.5s;
 }
 /*BEGIN of styling for background image behavior*/
 
 
 /*BEGIN of styling for BEGIN button link*/
-/*#background {
+#background {
   width: 150px;
-  height: 150px;
-  /*display: inline;*/
-/*}
-div.background {
-  background-color: white;
-  border: 2px solid black;
-  width: 300px;
-  height: 200px;
-  margin: 0 auto;
+  height: 300px;
+  display: inline;
 }
 
 div.transbox {
-  margin: 10px 10px 10px 10px;
+  z-index: 2;
+  width: 500px;
+  /*height: 50px;*/
+  margin-top: 0px;
+  margin-left: 175px;
   background-color: #ffffff;
-  border: 1px solid black;
-  opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
-}/*/
-
-/*div.link {
-  border: 2px solid black;
 }
 
-div.transbox p {
-  margin: 5%;
-  font-weight: bold;
-  color: #000000;
-}`*/
-/*END of styling for BEGIN button link*/
+#makeAccount {
+  position: relative;
+  width: 500px;
+  display: inline-block;
+  margin-left: 200px;
+}
+
+/*Annie's changes end here. evening of 12/21*/
 
 
 footer {
