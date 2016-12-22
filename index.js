@@ -1,3 +1,5 @@
+'use strict'
+
 var loggedIn = false; //default
 var currentUser = null; //
 var allUsers = [];
@@ -36,7 +38,7 @@ var submitSignUp = document.getElementById('submitSignUp');
 checkStorage();
 
 function handleSignIn(event){
-    event.preventDefault();
+  event.preventDefault();
   checkStorage();
 
 var login = document.getElementById('login');
@@ -46,18 +48,18 @@ var loginPassword = document.getElementById('password').value;
 
   if(sessionInfo[0] === true){
 
-      alert('You are currently signed in.')
-      form.textContent = null;
+    alert('You are currently signed in.')
+    form.textContent = null;
 
       // user Sign Out button
-      var signOutButton = document.getElementById('signOutButton');
-      var signOut = document.createElement('button');
-      signOut.id = 'signOutButton';
-      signOut.type = 'submit';
-      signOut.textContent = 'Sign Out';
-      signOutButtonHere.appendChild(signOut);
-      signOutButtonHere.addEventListener('click', handleSignOut);
-      return;
+    var signOutButton = document.getElementById('signOutButton');
+    var signOut = document.createElement('button');
+    signOut.id = 'signOutButton';
+    signOut.type = 'submit';
+    signOut.textContent = 'Sign Out';
+    signOutButtonHere.appendChild(signOut);
+    signOutButtonHere.addEventListener('click', handleSignOut);
+    return;
   }
 
   // in the event allUsers array is empty, then alert user to go sign up
@@ -76,8 +78,8 @@ var loginPassword = document.getElementById('password').value;
     }
 
 //populating teh sessionInfo array
-  sessionInfo.push(loggedIn = true);
-  sessionInfo.push(allUsers[i]);
-}
+sessionInfo.push(loggedIn = true);
+sessionInfo.push(allUsers[i]);
+  }
 }
 // END INDEX.HTML
