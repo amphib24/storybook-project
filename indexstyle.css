@@ -28,8 +28,8 @@ margin-bottom:20px;
 .subTitle{
   position: absolute;
   height: 35px;
-  left:850px;
-  top:50px;
+  left: 850px;
+  top: 50px;
 }
 
 #socialMedia {
@@ -165,55 +165,73 @@ div.transbox {
 
 
 footer {
-  clear: both;
-  height: 100px;
+clear: both;
+height: 100px;
 }
 
 
 /*BEGIN of About Us styling page*/
-#aboutus{
-  position:relative;
-  left: 25px;
-}
-
-#siamak {
+#aboutus {
 position: relative;
+left: 25px;
+top: 35px;
+line-height: 35px;
 }
 
 #siamak img {
-  position: relative;
+position: relative;
+border-radius: 5px;
 }
 
 #siamak p {
-  position: relative;
-  width: 600px;
-  left: 425px;
-  top: -320px;
+position: absolute;
+width: 600px;
+left: 425px;
+margin-top: -360px;
+margin-bottom: 100px;
 }
 
 #maria {
-position: relative;
-top: -250px;
+position: absolute;
+}
+#maria figcaption {
+position: absolute;
+left: 974px;
+width: 235px;
 }
 #maria img {
-  position: relative;
-right: -425px;
+position: relative;
+left: 974px;
+border-radius: 5px;
 }
-#maria p{
+#maria p {
 position: relative;
 width: 600px;
-/*top: -300px;*/
-
+top: -250px;
+left: 380px;
+}
+#jeff figcaption {
+position: relative;
+top:400px;
 
 }
-/*#jeff {
-  position: absolute;
-  float: left;
+#jeff img {
+position: relative;
+border-radius: 5px;
+top: 400px;
+}
+#jeff p {
+position: relative;
+width: 600px;
+left: 310px;
+top: 225px;
+}
 
-}*/
-
-/*#annie {
-  position: absolute;
-  float: right;
-
-}*/
+#annie {
+position: absolute;
+margin-top:250px;
+left: 885px;
+}
+#annie img {
+  border-radius: 5px;
+}
