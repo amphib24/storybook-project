@@ -45,6 +45,7 @@ nav{
   width: 100%;
 }
 #nav {
+font-family: 'Italiana', serif;
 position: relative;
 display: inline;
 text-align: center;
@@ -90,7 +91,7 @@ a:active {
   width: 250px;
   height: 250px;
   padding-left: 325px;
-  padding-top: 185px;
+  padding-top: 250px;
   display: block;
 }
 
@@ -125,7 +126,7 @@ input{
   opacity: .7;
   font-style: bold;
   font-size: 18px;
-  ffont-family: 'Henny Penny', cursive;
+  font-family: 'Henny Penny', cursive;
 }
 
 #clearText {
@@ -143,4 +144,11 @@ input{
 }
 button:hover {
   background: #efd467;
+}
+
+.socialMedia {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  float: left;
 }
