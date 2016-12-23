@@ -15,9 +15,9 @@ var storyTitle = document.getElementById('storyTitle');
 
 //Global variables
 var allImages = [];
-var imgName = ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz','tiger', 'batman', 'boyanddog', 'boydogplay', 'cars', 'cow', 'dragoncarrot', 'dreams', 'jellyfish', 'junglebook', 'lightingmcqueen', 'mice', 'monster', 'moon','ori-and-the-blind-forest', 'pirate', 'roof', 'safari', 'sheeps', 'transformer'];
+var imgName = [ 'moon', 'junglebook', 'mice','pirate',  'sheeps', 'transformer'];
 
-
+// ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz','tiger', 'batman', 'boyanddog', 'boydogplay', 'cars', 'cow', 'dragoncarrot', 'dreams', 'jellyfish', 'junglebook', 'lightingmcqueen', 'mice', 'monster', 'moon','ori-and-the-blind-forest', 'pirate', 'roof', 'safari', 'sheeps', 'transformer'];
 
 
 // INDEX.HTML
