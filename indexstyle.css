@@ -7,7 +7,7 @@ max-width: 1024px;
 min-width: auto;
 }
 
-h4 {
+.subTitle h4{
   font-family: 'Reenie Beanie', cursive;
   font-size: 30px;
   font-weight: bolder;
@@ -45,6 +45,7 @@ nav{
   width: 100%;
 }
 #nav {
+font-family: 'Italiana', serif;
 position: relative;
 display: inline;
 text-align: center;
@@ -154,11 +155,10 @@ div.transbox {
   background-color: #ffffff;
 }
 
-#makeAccount {
+#index {
   position: relative;
   width: 500px;
   display: inline-block;
-  margin-left: 200px;
 }
 
 /*Annie's changes end here. evening of 12/21*/
@@ -234,4 +234,11 @@ left: 885px;
 }
 #annie img {
   border-radius: 5px;
+}
+
+#annie p {
+position: relative;
+width: 600px;
+right: 615px;
+bottom: 150px;
 }
