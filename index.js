@@ -13,11 +13,11 @@ function checkStorage(){
     // console.log('allUsers array ' + allUsers);
   }
 
-  if(localStorage.sessionInfo){
-    var retrieveSession = localStorage.getItem('sessionInfo');
-    sessionInfo = JSON.parse(retrieveSession);
-    // console.log('session info = ' + sessionInfo);
-  }
+  // if(localStorage.sessionInfo){
+  //   var retrieveSession = localStorage.getItem('sessionInfo');
+  //   sessionInfo = JSON.parse(retrieveSession);
+  //   // console.log('session info = ' + sessionInfo);
+  // }
 }
 
 
@@ -32,12 +32,13 @@ function User(username, password) {
 new User('siamak', '1234');
 
 
-var submitSignIn = document.getElementById('signInButton');
+var submitSignIn = document.getElementById('index');
 
 // checkStorage();
 
 function handleSignIn(event){
-  checkStorage();
+  event.preventDefault();
+  // checkStorage();
 
 var login = document.getElementById('signInButton');
 var loginUsername = document.getElementById('username');
@@ -48,7 +49,7 @@ var loginPassword = document.getElementById('password');
     var signInForm = document.getElementById('index');
     loginUsername.value = '';
     loginPassword.value = '';
-    alert('You are currently signed in.')
+    // alert('You are currently signed in.')
   }
 
 
@@ -68,13 +69,80 @@ var loginPassword = document.getElementById('password');
       localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
       loginUsername.value = '';
       loginPassword.value = '';
-
-      //location.href = 'story.html';
+      location.assign('story.html');
     }
   }
 }
 
-
-console.log(sessionInfo);
-submitSignIn.addEventListener('click', handleSignIn);
+// console.log(sessionInfo);
+submitSignIn.addEventListener('submit', handleSignIn);
 // END INDEX.HTML
+
+
+//--------------------user sign up ----------------------------
+
+
+
+// if(signUp){
+//   checkStorage();
+//   signUpButton.addEventListener('click', goToSignUp);
+// }
+//
+// function goToSignUp(){
+//   location.href = 'signup.html';
+// }
+//
+// var doSignUp = document.getElementById('doSignUp');
+// doSignUp.addEventListener('click', handleSignUp);
+//
+//
+// function handleSignUp(event) {
+//   event.preventDefault();
+//
+//   if(sessionInfo[0] === true){
+//     alert('You are currently signed in.');
+//     var accountForm = document.getElementById('makeAccount');
+//     accountForm.value = '';
+//   }
+//
+//   var makeUsername = document.getElementById('makeUsername').value;
+//   var makePassword = document.getElementById('makePassword').value;
+//
+//   if(allUsers.length === 0){
+//     makeUser(makeUsername, makePassword);
+//     return;
+//   }
+//
+//   for(var i = 0; i < allUsers.length; i++){
+//     if(makeUsername === allUsers.username[i]){
+//       alert('Username is taken!');
+//       loggedIn = false;
+//       return;
+//     }
+//     if(makePassword.length > 8){
+//       alert('Password is too long!');
+//       loggedIn = false;
+//       return;
+//     }
+//     makeUser(makeUsername, makePassword);
+//   }
+// }
+//
+//
+// function makeUser(newUsername, newPassword){
+//
+// var newUser =new User(newUsername, newPassword);
+//     // console.log('newUsername = ' + newUsername);
+//     // console.log('newPassword = ' + newPassword);
+//
+//   sessionInfo.push(loggedIn = true);
+//   sessionInfo.push(newUser);
+//
+//
+//   var storeThisUser = localStorage.setItem('allUsers', JSON.stringify(allUsers));
+//   var storeThisSession = localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
+//
+//
+//   alert('Sign up Successful!');
+//   location.href = 'story.html';  // take user to story book
+// }
