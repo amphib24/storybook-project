@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Italiana|Laila" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
-<link href="reset.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="style.css">
-<title>Dream Land</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Italiana|Laila" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
+  <link href="reset.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+  <title>Dream Land</title>
+  </head>
 
-<body>
+  <body>
 
-  <header>
-    <div class="socialIcons">
-      <img class="socialMedia" src="img/facebook_icon.png">
-      <img class="socialMedia" src="img/twitter_icon.png">
-      <img class="socialMedia" src="img/google_icon.png">
-    </div>
+    <header>
+      <div class="socialIcons">
+        <img class="socialMedia" src="img/facebook_icon.png">
+        <img class="socialMedia" src="img/twitter_icon.png">
+        <img class="socialMedia" src="img/google_icon.png">
+      </div>
 
-    <form>
+      <form></form>
+
+      <div class="pageTitle">
+        <h1>MY STORY BOOK</h1>
+      </div>
+
+      <div class="subTitle">
+        <h4>Let's get creative!</h4>
+      </div>
+
+      <nav>
+        <ul id="nav">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="story.html">DREAM LAND</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <img class="background-image" src="img/book.jpg"/>
+    <img id="storyImage">
+    <button id="changeImageButton">Change Image</button>
+
+    <form id="storyForm">
+      <input id="storyTitle" name="formTitle" type="text" placeholder="Title">
+      <textarea name="formStory" placeholder="Once upon a time, " id="textBox" type="text"></textarea>
+      <button id="clearText">Clear text</button>
+      <button id="saveButton" type="submit">Save</button>
     </form>
 
+    <script src="app.js"></script>
 
-    <div class="pageTitle">
-      <h1>MY STORY BOOK</h1>
-    </div>
-
-
-    <div class="subTitle">
-      <h4>Let's get creative!</h4>
-    </div>
-
-    <nav>
-      <ul id="nav">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="story.html">DREAM LAND</a></li>
-        <li><a href="about.html">ABOUT US</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <img class="background-image" src="img/book.jpg"/>
-  <img id="storyImage">
-  <button id="changeImageButton">Change Image</button>
-
-<form id="storyForm">
-  <input id="storyTitle" name="formTitle" type="text" placeholder="Title">
-  <textarea name="formStory" placeholder="Once upon a time, " id="textBox" type="text"></textarea>
-  <button id="clearText">Clear text</button>
-  <button id="saveButton" type="submit">Save</button>
-</form>
-
-  <!-- <script src="index.js"></script> -->
-  <script src="app.js"></script>
-
-</body>
+  </body>
 
 </html>
