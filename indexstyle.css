@@ -61,7 +61,6 @@ text-align: center;
   padding: 50px 0 15px 0;
 }
 
-
 a:link {
   text-decoration: none;
   font-weight: bolder;
@@ -81,9 +80,8 @@ a:active {
 }
 /*END of styling for website name, navigation menu and link behavior*/
 
-/*Annie's changes start here. evening of 12/21:*/
-/*BEGIN of styling for background image behavior*/
 
+/*BEGIN of styling for background image behavior*/
 main{
   position: relative;
   left:17.5%;
@@ -136,7 +134,7 @@ main{
   transform:scale(0.7);
   transition:all 1.5s;
 }
-/*BEGIN of styling for background image behavior*/
+/*END of styling for background image behavior*/
 
 
 /*BEGIN of styling for BEGIN button link*/
@@ -149,7 +147,6 @@ main{
 div.transbox {
   z-index: 2;
   width: 500px;
-  /*height: 50px;*/
   margin-top: 0px;
   margin-left: 175px;
   background-color: #ffffff;
@@ -160,9 +157,6 @@ div.transbox {
   width: 500px;
   display: inline-block;
 }
-
-/*Annie's changes end here. evening of 12/21*/
-
 
 footer {
 clear: both;
@@ -185,60 +179,88 @@ border-radius: 5px;
 
 #siamak p {
 position: absolute;
-width: 600px;
-left: 425px;
-margin-top: -360px;
-margin-bottom: 100px;
+width: 700px;
+margin: -360px 0px 100px 325px;
+font-size: 12px;
 }
 
 #maria {
 position: absolute;
 }
+
 #maria figcaption {
 position: absolute;
-left: 974px;
+left: 760px;
+top: 290px;
 width: 235px;
 }
+
 #maria img {
 position: relative;
-left: 974px;
+top: 20px;
+left: 760px;
 border-radius: 5px;
 }
-#maria p {
-position: relative;
-width: 600px;
-top: -250px;
-left: 380px;
-}
-#jeff figcaption {
-position: relative;
-top:400px;
 
+#maria p {
+width: 700px;
+margin: -180px 0px 100px 0px;
+font-size: 12px;
 }
+
+#jeff {
+  position: absolute;
+}
+
+#jeff figcaption {
+position: absolute;;
+left: 10px;
+width: 235px;
+}
+
 #jeff img {
 position: relative;
 border-radius: 5px;
-top: 400px;
+margin: 350px 0px 0px 0px;
 }
+
 #jeff p {
-position: relative;
-width: 600px;
-left: 310px;
-top: 225px;
+width: 700px;
+float: right;
+margin:-200px 0px 100px 300px;
+font-size: 12px;
 }
 
 #annie {
 position: absolute;
-margin-top:250px;
-left: 885px;
 }
+
+#annie figcaption {
+position: absolute;
+width: 235px;
+left: 760px;
+}
+
 #annie img {
-  border-radius: 5px;
+position: relative;
+margin: 700px 0px 0px 760px;
+border-radius: 5px;
 }
 
 #annie p {
+width: 700px;
+left: 825px;
+margin-top: -200px;
+margin-bottom: 100px;
+font-size: 12px;
+}
+
+#imgSources {
 position: relative;
-width: 600px;
-right: 615px;
-bottom: 150px;
+margin: 1100px 0px 100px 5px;
+font-size: 14px;
+}
+
+#sourcesList {
+font-size: 14px;
 }

@@ -80,6 +80,7 @@ a:active {
   font-weight: bolder;
 }
 /*END of styling for website name, navigation menu and link behavior*/
+
 .background-image{
   z-index: -999;
   position: absolute;
@@ -98,6 +99,7 @@ a:active {
 form{
   display: inline-block;
 }
+
 #changeImageButton{
   width: 75px;
   height: 30px;
@@ -106,6 +108,7 @@ form{
   left: 415px;
   top: 710px;
 }
+
 /*title*/
 input{
   position: absolute;
@@ -116,6 +119,7 @@ input{
  font-size: 20px;
  font-family: 'Indie Flower', cursive;
 }
+
 /*textbox*/
 #textBox{
   position: absolute;

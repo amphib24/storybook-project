@@ -15,18 +15,8 @@ var storyTitle = document.getElementById('storyTitle');
 
 //Global variables
 var allImages = [];
-var imgName = [ 'moon', 'junglebook', 'mice','pirate',  'sheeps', 'transformer'];
+var imgName = ['batman', 'beanstalk','boyanddog', 'cars', 'cow', 'dragoncarrot', 'dreams', 'gorilla', 'humpty', 'jellyfish', 'junglebook', 'lightingmcqueen', 'mice', 'monster', 'moon', 'ori-and-the-blind-forest', 'oz', 'pirate', 'roof', 'safari', 'sheeps', 'tiger', 'transformer'];
 
-// ['beanstalk', 'gorilla', 'humpty', 'moon', 'oz','tiger', 'batman', 'boyanddog', 'boydogplay', 'cars', 'cow', 'dragoncarrot', 'dreams', 'jellyfish', 'junglebook', 'lightingmcqueen', 'mice', 'monster', 'moon','ori-and-the-blind-forest', 'pirate', 'roof', 'safari', 'sheeps', 'transformer'];
-
-
-// INDEX.HTML
-
-
-
-
-
-//to get images from the array, to use later for local storage
 
 //Constructor
 function ImgGenerator(name){
@@ -38,8 +28,7 @@ function ImgGenerator(name){
   allImages.push(this);
 }
 
-
- //////// create random image generator
+// create random image generator
 function randImg() {
   var randomNumber = Math.floor(Math.random() * allImages.length);
   var theImage = allImages[randomNumber];
@@ -66,7 +55,7 @@ function displayImg() {
     storyTitle.value = imageObject.title;
     textBox.value = imageObject.story;
   }
-  // reset check when array runs out .
+  // reset check when array runs out
   counter += 1;
 
   if (counter % allImages.length === 0) {
@@ -74,10 +63,7 @@ function displayImg() {
     allImages.forEach(function (element) {
       element.used = false;
     });
-
   }
-
-  // console.table(allImages);
 }
 
 function handleStoryForm(event) {
@@ -90,8 +76,6 @@ function handleStoryForm(event) {
       localStorage.setItem('allImages', JSON.stringify(allImages));
     }
   }
-  // event.target.formTitle.value = null;
-  // event.target.formStory.value = null;
 }
 
 function checkImages() {
